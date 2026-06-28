@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asalari Asali</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+<style>
+    /* ===== СБРОС ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#fff9e6;
+    color:#333;
+    overflow-x:hidden;
+}
+
+/* ===== ФОН СОТ ===== */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+    radial-gradient(circle at 25px 25px,#ffd54f 2px,transparent 2px),
+    linear-gradient(30deg,#f8e38a 12%,transparent 12.5%,transparent 87%,#f8e38a 87.5%,#f8e38a),
+    linear-gradient(150deg,#f8e38a 12%,transparent 12.5%,transparent 87%,#f8e38a 87.5%,#f8e38a);
+    background-size:60px 60px;
+    opacity:.08;
+    z-index:-1;
+}
+
+/* ===== HEADER ===== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:18px 8%;
+    background:rgba(255,193,7,.95);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(12px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    z-index:999;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+    color:#6d4c00;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:#5a3d00;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:white;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:130px 8% 80px;
+    gap:50px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h1{
+    font-size:60px;
+    color:#8d5b00;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    font-size:20px;
+    line-height:1.8;
+    color:#555;
+    margin-bottom:35px;
+}
+
+.hero-img{
+    flex:1;
+    text-align:center;
+}
+
+.hero-img img{
+    width:90%;
+    max-width:500px;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-20px);
+    }
+}
+
+/* ===== КНОПКИ ===== */
+
+.buttons{
+    display:flex;
+    gap:20px;
+}
+
+.btn,
+.btn2{
+    padding:15px 35px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn{
+    background:#ffb300;
+    color:white;
+    box-shadow:0 10px 25px rgba(255,179,0,.4);
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    background:#ff9800;
+}
+
+.btn2{
+    border:2px solid #ffb300;
+    color:#ff9800;
+}
+
+.btn2:hover{
+    background:#ffb300;
+    color:white;
+}
+
+/* ===== КАРТОЧКИ ===== */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+    padding:80px 8%;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+}
+
+.card i{
+    font-size:45px;
+    color:#ffb300;
+    margin-bottom:20px;
+}
+
+.card h2{
+    color:#8d5b00;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#666;
+    line-height:1.7;
+}
+
+/* ===== ABOUT ===== */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    padding:90px 8%;
+    align-items:center;
+}
+
+.about h2{
+    font-size:42px;
+    color:#8d5b00;
+    margin-bottom:20px;
+}
+
+.about p{
+    margin-bottom:18px;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.about img{
+    width:100%;
+    border-radius:25px;
+    box-shadow:0 20px 35px rgba(0,0,0,.15);
+}
+
+/* ===== VIDEO ===== */
+
+.video{
+    padding:90px 8%;
+    text-align:center;
+}
+
+.video h2{
+    font-size:42px;
+    color:#8d5b00;
+    margin-bottom:40px;
+}
+
+.videos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.videos video{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 15px 30px rgba(0,0,0,.12);
+}
+/* ===== FACTS ===== */
+
+.facts{
+    padding:90px 8%;
+    text-align:center;
+}
+
+.facts h2{
+    font-size:42px;
+    color:#8d5b00;
+    margin-bottom:50px;
+}
+
+.fact-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.fact-box div{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.fact-box div:hover{
+    transform:translateY(-10px);
+}
+
+.fact-box h1{
+    font-size:50px;
+    color:#ffb300;
+    margin-bottom:15px;
+}
+
+.fact-box p{
+    color:#666;
+}
+
+/* ===== GALLERY ===== */
+
+.gallery{
+    padding:100px 8%;
+    text-align:center;
+}
+
+.gallery h2{
+    font-size:42px;
+    color:#8d5b00;
+    margin-bottom:15px;
+}
+
+.gallery-text{
+    color:#666;
+    margin-bottom:50px;
+    font-size:18px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.photo{
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0 15px 30px rgba(0,0,0,.1);
+}
+
+.photo img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.photo:hover img{
+    transform:scale(1.15);
+}
+
+/* ===== REVIEWS ===== */
+
+.reviews{
+    padding:90px 8%;
+    background:#fff3cd;
+}
+
+.reviews h2{
+    text-align:center;
+    font-size:42px;
+    color:#8d5b00;
+    margin-bottom:45px;
+}
+
+.review-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.review{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.review h3{
+    color:#ffb300;
+    margin-bottom:15px;
+}
+
+.review p{
+    line-height:1.8;
+    color:#666;
+    margin-bottom:20px;
+}
+
+.review span{
+    color:#8d5b00;
+    font-weight:bold;
+}
+
+/* ===== CTA ===== */
+
+.cta{
+    padding:90px 8%;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:45px;
+    color:#8d5b00;
+    margin-bottom:20px;
+}
+
+.cta p{
+    color:#666;
+    font-size:18px;
+    margin-bottom:35px;
+}
+
+/* ===== CONTACT ===== */
+
+.contact{
+    padding:90px 8%;
+}
+
+.contact h2{
+    text-align:center;
+    font-size:42px;
+    color:#8d5b00;
+    margin-bottom:50px;
+}
+
+.contact-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-bottom:50px;
+}
+
+.contact-card{
+    background:white;
+    text-align:center;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.contact-card:hover{
+    transform:translateY(-10px);
+}
+
+.contact-card i{
+    font-size:45px;
+    color:#ffb300;
+    margin-bottom:20px;
+}
+
+.contact-card h3{
+    color:#8d5b00;
+    margin-bottom:15px;
+}
+
+.map iframe{
+    width:100%;
+    height:450px;
+    border:none;
+    border-radius:20px;
+    box-shadow:0 15px 30px rgba(0,0,0,.1);
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    background:#3b2b00;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.footer-content h2{
+    margin-bottom:15px;
+    color:#ffd54f;
+}
+
+.footer-content p{
+    margin:10px 0;
+}
+
+.social{
+    margin:30px 0;
+}
+
+.social a{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#ffb300;
+    color:white;
+    text-decoration:none;
+    font-size:22px;
+    margin:0 10px;
+    transition:.3s;
+}
+
+.social a:hover{
+    transform:translateY(-8px) rotate(10deg);
+    background:#ff9800;
+}
+
+.made{
+    margin-top:35px;
+    font-size:13px;
+    opacity:.7;
+}
+
+/* ===== АДАПТИВ ===== */
+
+@media(max-width:900px){
+
+header{
+    flex-direction:column;
+    gap:20px;
+}
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+.about{
+    grid-template-columns:1fr;
+}
+
+.hero-text h1{
+    font-size:42px;
+}
+
+.buttons{
+    justify-content:center;
+}
+
+nav{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+}
+/* Пчёлки */
+
+#bees{
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:999;
+}
+
+.bee{
+position:absolute;
+font-size:28px;
+transition:.15s linear;
+animation:fly 1s infinite alternate;
+}
+
+@keyframes fly{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(-8px);
+}
+
+}
+
+/* Анимация появления */
+
+.hidden{
+
+opacity:0;
+
+transform:translateY(70px);
+
+transition:1s;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+</style>
+
+<body>
+
+<div id="bees"></div>
+
+<header>
+
+<div class="logo">
+🐝 Asalari Asali
+</div>
+
+<nav>
+
+<a href="#video">Video</a>
+<a href="#gallery">Galereya</a>
+<a href="#contact">Aloqa</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>
+Tabiatning Eng Shirin Ne'mati
+</h1>
+
+<p>
+
+100% tabiiy asal.
+Asalarilarimiz mehr bilan yig'gan,
+hech qanday qo'shimchasiz sof mahsulot.
+
+</p>
+
+<div class="buttons">
+
+<a href="#about" class="btn">
+Batafsil
+</a>
+
+<a href="#contact" class="btn2">
+Bog'lanish
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-img">
+
+<img src="img/honey.png" alt="">
+
+</div>
+
+</section>
+
+<section class="wave"></section>
+
+<section class="cards">
+
+<div class="card">
+
+<i class="fa-solid fa-leaf"></i>
+
+<h2>100% Tabiiy</h2>
+
+<p>
+
+Bizning asal hech qanday
+kimyoviy qo'shimchasiz tayyorlanadi.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-heart"></i>
+
+<h2>Sog'liq uchun</h2>
+
+<p>
+
+Asal immunitetni mustahkamlaydi,
+organizmga tabiiy quvvat beradi.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-truck-fast"></i>
+
+<h2>Tez Yetkazib Berish</h2>
+
+<p>
+
+Buyurtmangiz qisqa vaqt ichida
+manzilingizga yetkaziladi.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="about" class="about">
+
+<div class="left">
+
+<h2>
+Nega aynan bizning asal?
+</h2>
+
+<p>
+
+🐝 Har bir tomchi asal
+minglab gullardan yig'ilgan nektarning
+tabiiy ne'matidir.
+
+</p>
+
+<p>
+
+🍯 Sof, mazali va foydali.
+
+</p>
+
+<p>
+
+🌼 O'z asalarixonamiz mahsuloti.
+
+</p>
+
+<p>
+
+❤️ Oilangiz salomatligi uchun eng yaxshi tanlov.
+
+</p>
+
+</div>
+
+<div class="right">
+
+<img src="photo_2026-06-28_13-32-53.jpg">
+
+</div>
+
+</section>
+
+<section id="video" class="video">
+
+<h2>
+
+Bizning Asalarixonamiz
+
+</h2>
+
+<div class="videos">
+
+<video controls>
+
+<source src="video_2026-06-28_13-33-01.mp4">
+
+</video>
+
+<video controls>
+
+<source src="video_2026-06-28_13-55-56.mp4">
+
+</video>
+<video controls>
+
+<source src="video_2026-06-28_15-47-38.mp4">
+
+</video>
+
+</div>
+
+</section>
+
+<section class="facts">
+
+<h2>
+
+Qiziqarli Faktlar
+
+</h2>
+
+<div class="fact-box">
+
+<div>
+
+<h1>20 000+</h1>
+
+<p>Kuniga tashrif buyuradigan gullar</p>
+
+</div>
+
+<div>
+
+<h1>100%</h1>
+
+<p>Tabiiy mahsulot</p>
+
+</div>
+
+<div>
+
+<h1>500+</h1>
+
+<p>Mamnun mijozlar</p>
+
+</div>
+
+<div>
+
+<h1>24/7</h1>
+
+<p>Buyurtma qabul qilamiz</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="gallery" class="gallery">
+
+    <h2>Bizning Mahsulotlarimiz</h2>
+
+    <p class="gallery-text">
+        Sof asal, asalari oilalari va tabiiy mahsulotlarimizdan lavhalar.
+    </p>
+
+    <div class="gallery-grid">
+
+        <div class="photo">
+            <img src="photo_2026-06-28_13-32-26.jpg" alt="">
+        </div>
+
+        <div class="photo">
+            <img src="photo_2026-06-28_13-32-41.jpg" alt="">
+        </div>
+
+        <div class="photo">
+            <img src="photo_2026-06-28_13-54-20 (3).jpg" alt="">
+        </div>
+
+        <div class="photo">
+            <img src="photo_2026-06-28_13-54-20.jpg" alt="">
+        </div>
+
+
+    </div>
+
+</section>
+
+<section class="reviews">
+
+<h2>Mijozlar Fikri</h2>
+
+<div class="review-box">
+
+<div class="review">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+"Juda mazali va tabiiy asal.
+Har yili faqat shu yerdan olamiz."
+</p>
+
+<span>- MANSUR</span>
+
+</div>
+
+<div class="review">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+"Asal sifati juda zo'r.
+Bolalar ham juda yaxshi ko'radi."
+</p>
+
+<span>-SHAHLO</span>
+
+</div>
+
+<div class="review">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+"Yetkazib berish tez,
+asal esa haqiqatan tabiiy."
+</p>
+
+<span>- SUHROB</span>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>
+Tabiatning Eng Shirin Sovg'asini Tatib Ko'ring!
+</h2>
+
+<p>
+Bugunoq buyurtma bering va haqiqiy tabiiy asalning ta'mini his qiling.
+</p>
+
+<a href="#contact" class="btn">
+Buyurtma Berish
+</a>
+
+</section>
+
+<section id="contact" class="contact">
+
+<h2>Aloqa</h2>
+
+<div class="contact-box">
+
+<div class="contact-card">
+<i class="fa-solid fa-phone"></i>
+<h3>Telefon</h3>
+<p>+998 995081102</p>
+</div>
+
+<div class="contact-card">
+<i class="fa-brands fa-telegram"></i>
+<h3>Telegram</h3>
+<p>Javohir_asalchi</p>
+</div>
+
+<div class="contact-card">
+<i class="fa-solid fa-location-dot"></i>
+<h3>Manzil</h3>
+<p>Samarqand, O'zbekiston</p>
+</div>
+
+</div>
+
+<div class="map">
+
+<iframe
+    src="https://maps.google.com/maps?q=40.001032,66.260109&z=16&output=embed"
+    width="100%"
+    height="450"
+    style="border:0;"
+    loading="lazy">
+</iframe>
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-content">
+
+<h2>🐝 Asalari Asali</h2>
+
+<p>
+100% tabiiy asal. Sifat, ishonch va tabiiylik — bizning asosiy qadriyatimiz.
+</p>
+
+<div class="social">
+
+<a href="#"><i class="fa-brands fa-telegram"></i></a>
+
+<a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+<a href="#"><i class="fa-brands fa-facebook"></i></a>
+
+</div>
+
+<p class="made">
+Made by Dildota ❤️
+</p>
+
+</div>
+
+</footer>
+
+<script >// =======================
+// ЛЕТАЮЩИЕ ПЧЁЛКИ
+// =======================
+
+const beeContainer = document.getElementById("bees");
+
+for (let i = 0; i < 12; i++) {
+
+    const bee = document.createElement("div");
+    bee.className = "bee";
+    bee.innerHTML = "🐝";
+
+    bee.style.left = Math.random() * window.innerWidth + "px";
+    bee.style.top = Math.random() * window.innerHeight + "px";
+
+    bee.dataset.x = Math.random() * window.innerWidth;
+    bee.dataset.y = Math.random() * window.innerHeight;
+
+    bee.dataset.dx = (Math.random() * 2 + 0.5);
+    bee.dataset.dy = (Math.random() * 2 + 0.5);
+
+    beeContainer.appendChild(bee);
+}
+
+function animateBees(){
+
+    const bees = document.querySelectorAll(".bee");
+
+    bees.forEach(bee=>{
+
+        let x = parseFloat(bee.dataset.x);
+        let y = parseFloat(bee.dataset.y);
+
+        let dx = parseFloat(bee.dataset.dx);
+        let dy = parseFloat(bee.dataset.dy);
+
+        x += dx;
+        y += dy;
+
+        if(x > window.innerWidth-40 || x < 0){
+            dx *= -1;
+        }
+
+        if(y > window.innerHeight-40 || y < 0){
+            dy *= -1;
+        }
+
+        bee.dataset.x = x;
+        bee.dataset.y = y;
+
+        bee.dataset.dx = dx;
+        bee.dataset.dy = dy;
+
+        bee.style.left = x+"px";
+        bee.style.top = y+"px";
+
+        bee.style.transform =
+        `rotate(${Math.sin(Date.now()/150)*15}deg)`;
+    });
+
+    requestAnimationFrame(animateBees);
+}
+
+animateBees();
+
+
+// =======================
+// ПОЯВЛЕНИЕ БЛОКОВ
+// =======================
+
+const observer = new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},{
+    threshold:.2
+});
+
+document.querySelectorAll(
+".card,.photo,.review,.contact-card,.fact-box div,.about,.video,.gallery,.cta"
+).forEach(el=>{
+
+    el.classList.add("hidden");
+
+    observer.observe(el);
+
+});
+
+
+// =======================
+// ШАПКА
+// =======================
+
+window.addEventListener("scroll",()=>{
+
+    const header=document.querySelector("header");
+
+    if(window.scrollY>100){
+
+        header.style.background="#ffc107";
+
+        header.style.boxShadow="0 10px 25px rgba(0,0,0,.15)";
+
+    }else{
+
+        header.style.background="rgba(255,193,7,.95)";
+
+        header.style.boxShadow="none";
+
+    }
+
+});
+
+
+// =======================
+// ПЛАВНАЯ ПРОКРУТКА
+// =======================
+
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+
+link.addEventListener("click",function(e){
+
+e.preventDefault();
+
+const id=this.getAttribute("href");
+
+document.querySelector(id).scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+});
+
+});</script>
+
+</body>
+</html>
